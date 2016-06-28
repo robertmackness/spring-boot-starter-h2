@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"> </meta>
+<title>Spring Boot Simple MVC - R Mackness</title>
+<link rel="stylesheet" th:href="@{/style.css}"></link>
+</head>
+<body>
+	<h1>Lightweight full MVC using Spring-Boot-Starters and in-memory H2 database</h1>
+	<br />
+	<form method="POST">
+		<label for="firstName">First Name</label>
+		<input type="text" name="firstName" />
+		<label for="lastName">Last Name</label>
+		<input type="text" name="lastName" />
+		<label for="phoneNumber">Phone Number</label>
+		<input type="text" name="phoneNumber" />
+		<label for="emailAddress">Email Address</label>
+		<input type="text" name="emailAddress" />
+		<br />
+		<input type="submit" />
+	</form>
+	<ul th:each="contact : ${contacts}">
+	 <li>
+	  <span th:text="${contact.firstName}">firstNamePlaceholder</span>
+	  <span th:text="${contact.lastName}">lastNamePlaceholder</span>, 
+	  <span th:text="${contact.phoneNumber}">phoneNumberPlaceholder</span>,
+	  <span th:text="${contact.emailAddress}">emailAddressPlaceholder</span>
+	 </li>
+	</ul>
+</body>
+</html>
